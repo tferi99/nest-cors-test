@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rest CORS Test</title>
+    <script>
+        const userAction = async (url) => {
+            const response = await fetch(url);
+            const myJson = await response.json(); //extract JSON from the http response
+            console.log('Result:', myJson);
+        }
+    </script>
+</head>
+<body>
+<h2>Rest CORS Test</h2>
+<button onclick="userAction('http://localhost:3000/user')">Call my REST</button>
+<button onclick="userAction('http://example.com/movies.json')">Call external REST</button>
+<hr>
+<small><i>Open console for results.</i></small>
+</body>
+</html>
